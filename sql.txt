@@ -1,0 +1,19 @@
+--按照指定的日期查询
+SELECT
+	"sum" (SOURCE)
+FROM
+	person
+WHERE
+	ID = 1
+AND username = 'fwb1'
+GROUP BY
+	EXTRACT (
+		YEAR
+		FROM
+			CAST (createtime AS TIMESTAMP)
+	),
+	EXTRACT (
+		MONTH
+		FROM
+			CAST (createtime AS TIMESTAMP)
+	)
